@@ -1,4 +1,4 @@
-name: CI - Airline API
+name: ShopHub-automation
 run-name: CI ${{ github.ref_name }}   # Nombre de la ejecución, muestra la rama
 
 # Eventos que activan el workflow
