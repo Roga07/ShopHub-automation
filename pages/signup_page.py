@@ -19,6 +19,7 @@ class SignUp(BasePage):
     BUTTON_SIGNUP =  (By.XPATH, "//button[@type='submit' and normalize-space(.)='Sign Up']")
 
 
+
     #Aciones
     def load(self):
         self.open(self.URL)

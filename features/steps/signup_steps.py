@@ -2,6 +2,7 @@ from behave import given, when, then
 from selenium import webdriver
 from pages.signup_page import SignUp
 
+
 @given("el usuario esta en la pagina home")
 def step_user_on_homepage(context):
     context.driver = webdriver.Chrome()

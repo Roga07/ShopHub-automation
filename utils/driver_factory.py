@@ -4,6 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 
+
 def create_driver(headless: bool = False):
     options = webdriver.ChromeOptions()
 

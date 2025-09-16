@@ -10,6 +10,7 @@ def pytest_addoption(parser):
     )
 
 
+
 @pytest.fixture
 def driver(request):
     headless = request.config.getoption("--headless")

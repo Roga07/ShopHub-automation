@@ -3,6 +3,7 @@ from pages.signup_page import SignUp
 from selenium.webdriver.support.ui import WebDriverWait
 
 
+
 FIRST_NAME = "John"
 LAST_NAME = "Doe"
 EMAIL = "john.doe@example.com"
