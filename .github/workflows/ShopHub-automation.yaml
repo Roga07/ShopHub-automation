@@ -110,7 +110,7 @@ jobs:
           path: |
             reports/**
             **/screenshots/**
-          if-no-file-found: ignore
+          if-no-files-found: ignore
           retention-days: 7  # Conservar artifacts por 7 días
 
       # Paso 11: Opcional - Subir reporte de cobertura a Codecov
