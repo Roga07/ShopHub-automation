@@ -10,9 +10,8 @@ def create_driver(headless: bool = False):
 
     if headless:
         options.add_argument("--headless=new")
-
-    options.add_argument("--windows-size=1080, 720")
-    options.add_argument("--incognito")
+        options.add_argument("--windows-size=1080, 720")
+        options.add_argument("--incognito")
 
     driver = webdriver.Chrome(
         service=ChromeService(ChromeDriverManager().install()),
