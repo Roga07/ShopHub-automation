@@ -22,6 +22,7 @@ def step_user_fills_form(context):
         "Password123"
     )
 
+
 @then("el usuario debe ser redirigido a la pagina de exito")
 def step_user_redirected_success(context):
     assert "signup/success" in context.driver.current_url

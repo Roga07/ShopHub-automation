@@ -11,6 +11,7 @@ PASSWORD = "Password123"
 
 EXPECTED_URL = "https://shophub-commerce.vercel.app/signup/success"
 
+
 @pytest.mark.e2e
 def test_user_register(driver):
     signup = SignUp(driver)
