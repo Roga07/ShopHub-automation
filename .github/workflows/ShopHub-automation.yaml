@@ -72,7 +72,7 @@ jobs:
             cp .env.example .env
           else
             echo "# Environment variables" > .env
-            echo "BASE_URL=http://localhost:8000" >> .env
+            echo "BASE_URL=http://shophub-commerce.vercel.app/" >> .env
           fi
 
       # Paso 8: Verificar que el setup esté correcto
