@@ -101,6 +101,7 @@ jobs:
           # Mostrar resumen de cobertura en consola
           python -m coverage report
 
+
       # Paso 10: Subir reportes y screenshots como artifacts
       - name: 📊 Upload test artifacts (reports and screenshots)
         if: always()  # Siempre sube artifacts, incluso si fallan las pruebas
