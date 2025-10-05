@@ -22,7 +22,7 @@ def test_checkout_fields_cannot_advance(driver):
     cart.proceed_to_checkout()
 
     checkout = CheckoutPage(driver)
-    checkout.fill_checkout_form(
+    checkout.fill_checkout_form_empty(
             FILL_CHECKOUT_EMPTY["first_name"],
             FILL_CHECKOUT_EMPTY["last_name"],
             FILL_CHECKOUT_EMPTY["email"],

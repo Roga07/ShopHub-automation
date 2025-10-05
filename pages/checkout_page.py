@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 from data.env_data import OVERLAY
+from utils.helpers import safe_text
 
 
 
@@ -28,3 +29,16 @@ class CheckoutPage(BasePage):
         self.type(self.COUNTRY, country)
         self.wait_for_invisibility(OVERLAY)
         self.click(self.BUTTON_ORDER)
+
+    def fill_checkout_form_empty(self, firstname: None, lastname: None, email: None, phone:None, address:None, city: None, zipcode: None, country:None):
+        self.type(self.FIRST_NAME, safe_text(firstname))
+        self.type(self.LAST_NAME, safe_text(lastname))
+        self.type(self.EMAIL, safe_text(email))
+        self.type(self.PHONE, safe_text(phone))
+        self.type(self.ADDRESS,safe_text(address))
+        self.type(self.CITY, safe_text(city))
+        self.type(self.ZIP_CODE, safe_text(zipcode))
+        self.type(self.COUNTRY, safe_text(country))
+        self.wait_for_invisibility(OVERLAY)
+        self.click(self.BUTTON_ORDER)
+
