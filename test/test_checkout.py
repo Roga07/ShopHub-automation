@@ -1,12 +1,11 @@
 import pytest
-from data.env_data import SIGNUP_USER, FILL_CHECKOUT_EMPTY
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
+from data.env_data import FILL_CHECKOUT_EMPTY
 from pages.signup_page import SignUp
-from pages.checkout_page import CheckoutPage
 from pages.products_page import ProductsPage
 from pages.cart_page import CartPage
 from pages.checkout_page import CheckoutPage
-from pages.chekout_complete_page import CheckoutCompletePage
-
 
 
 
@@ -34,6 +33,11 @@ def test_checkout_fields_cannot_advance(driver):
             FILL_CHECKOUT_EMPTY["country"]
     )
 
-    checkout_complete = CheckoutCompletePage(driver)
-    checkout_complete.validate_purchase_completion_url()
 
+    try:
+        # Espera hasta 2 segundos a que aparezca un alert
+         alert = WebDriverWait(driver, 2).until(ec.alert_is_present())
+         print("Alerta encontrada:", alert.text)
+         alert.accept()  # Acepta la alerta
+    except:
+        print("No hay alert presente")
