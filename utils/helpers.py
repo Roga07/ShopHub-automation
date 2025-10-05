@@ -1,6 +1,3 @@
-import random
-import string
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
 
-
-def random_email():
-    return "user_" + ''.join(random.choices(string.ascii_lowercase, k=5)) + "@test.com"
