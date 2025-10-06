@@ -49,14 +49,14 @@ LOGIN_UNREGISTERED_USER = {
 }
 
 FILL_CHECKOUT_EMPTY = {
-    "first_name": os.getenv("FIRST_NAME_EMPTY"),
-    "last_name": os.getenv("LAST_NAME_EMPTY"),
-    "email": os.getenv("EMAIL_EMPTY"),
-    "phone": os.getenv("PHONE_EMPTY"),
-    "address": os.getenv("ADDRESS_EMPTY"),
-    "city": os.getenv("CITY_EMPTY"),
-    "zip_code": os.getenv("ZIP_CODE_EMPTY"),
-    "country": os.getenv("COUNTRY_EMPTY")
+    "first_name": os.getenv("FIRST_NAME_EMPTY",""),
+    "last_name": os.getenv("LAST_NAME_EMPTY",""),
+    "email": os.getenv("EMAIL_EMPTY",""),
+    "phone": os.getenv("PHONE_EMPTY",""),
+    "address": os.getenv("ADDRESS_EMPTY",""),
+    "city": os.getenv("CITY_EMPTY",""),
+    "zip_code": os.getenv("ZIP_CODE_EMPTY",""),
+    "country": os.getenv("COUNTRY_EMPTY","")
 
 }
 
