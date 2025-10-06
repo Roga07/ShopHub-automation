@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
-from data.env_data import BASE_URL,OVERLAY
+from data.env_data import BASE_URL,OVERLAY,SIGNUP_USER
 from selenium.webdriver.support import expected_conditions as EC
 
 
