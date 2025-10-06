@@ -1,11 +1,9 @@
-from selenium.webdriver.common.by import By
-from conftest import driver
 from pages.base_page import BasePage
 from data.env_data import OVERLAY
 
 
-class CheckoutCompletePage(BasePage):
 
+class CheckoutCompletePage(BasePage):
 
 
     def validate_purchase_completion_url(self):
