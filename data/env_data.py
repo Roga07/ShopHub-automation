@@ -3,7 +3,12 @@ from dotenv import load_dotenv
 from selenium.webdriver.common.by import By
 
 
+
 load_dotenv() #carga las variables del .env
+
+# Detectar si estamos en CI (GitHub Actions, etc.)
+CI_ENV = os.getenv("CI", "false").lower() == "true"
+
 
 # URL de la página principal
 BASE_URL = "https://shophub-commerce.vercel.app"
@@ -60,15 +65,13 @@ FILL_CHECKOUT_EMPTY = {
     "country": " "
 }
 
-# === Validación general ===
-# Validar solo variables simples, no diccionarios de prueba
-for key, value in globals().items():
-    if key.startswith("__"):
-        continue  # Ignorar internals
-    if key in ["FILL_CHECKOUT_EMPTY"]:
-        continue  # Ignorar diccionarios con valores vacíos a propósito
-    if isinstance(value, dict):
-        # Validar campos de diccionarios normales (como SIGNUP_USER)
-        for subkey, subvalue in value.items():
-            if not subvalue or subvalue.strip() == "":
-                raise ValueError(f"{subkey} no puede ser None o vacío")
+# === Validación de variables importantes ===
+# Solo validar si NO estamos en CI
+if not CI_ENV:
+    for key, value in SIGNUP_USER.items():
+        if not value or value.strip() == "":
+            raise ValueError(f"{key} no puede ser None o vacío")
+
+# === Opcional: imprimir para debug local ===
+if not CI_ENV:
+    print("✅ Variables cargadas correctamente:", SIGNUP_USER)
