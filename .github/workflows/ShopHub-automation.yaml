@@ -22,31 +22,6 @@ concurrency:
 jobs:
   test:
     runs-on: ubuntu-latest            # Entorno: última versión de Ubuntu
-    env:
-      FIRST_NAME:"John"
-      LAST_NAME:"Doe"
-      EMAIL:"john.doe@example.com"
-      ZIP_CODE:"23085"
-      PASSWORD:"Password123@."
-      
-      #Complemento checkout
-      
-      PHONE:"9615465484"
-      ADDRESS:"AV CENTRAL"
-      CITY:"TUXTLA"
-      COUNTRY:"MEXICO"
-      
-      #Credenciales Invalidas(para negativos)
-      #Formato invalido
-      FIRST_NAME_FAIL:"John"
-      LAST_NAME_FAIL:"Doe"
-      EMAIL_FAIL:"jhon.doeexample.com"
-      ZIP_CODE_FAIL:"23085"
-      PASSWORD_FAIL:"Password123@."
-      
-      #correo no registrado
-      EMAIL_UNREGISTERED:"alex@example.com"
-      PASSWORD_UNREGISTERED:"Password123@."
 
     steps:
       # Paso 1: Obtener el código del repositorio
@@ -108,20 +83,36 @@ jobs:
       # Paso 9: Ejecutar pruebas con cobertura y reportes
       - name: 🧪 Run tests with Pytest
         env:
-          FIRST_NAME: John
-          LAST_NAME: Doe
-          EMAIL: john.doe@example.com
-          ZIP_CODE: 12345
-          PASSWORD: Password123
-          PHONE: 5551234567
-          ADDRESS: 123 Main Street
-          CITY: Tuxtla
-          COUNTRY: Mexico
-          BASE_URL: ${{ secrets.BASE_URL }}
-          SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
-          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+            FIRST_NAME: "John"
+            LAST_NAME: "Doe"
+            EMAIL: "john.doe@example.com"
+            ZIP_CODE: "23085"
+            PASSWORD: "Password123@."
 
-          run: |
+            #Complemento checkout
+
+            PHONE: "9615465484"
+            ADDRESS: "AV CENTRAL"
+            CITY: "TUXTLA"
+            COUNTRY: "MEXICO"
+
+            #Credenciales Invalidas(para negativos)
+            #Formato invalido
+            FIRST_NAME_FAIL: "John"
+            LAST_NAME_FAIL: "Doe"
+            EMAIL_FAIL: "jhon.doeexample.com"
+            ZIP_CODE_FAIL: "23085"
+            PASSWORD_FAIL: "Password123@."
+
+            #correo no registrado
+            EMAIL_UNREGISTERED: "alex@example.com"
+            PASSWORD_UNREGISTERED: "Password123@."
+
+            BASE_URL: ${{ secrets.BASE_URL }}
+            SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+            SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+
+            run: |
               pip install -r requirements.txt
               - name: Run tests
         run: |
