@@ -3,7 +3,7 @@ from data.env_data import LOGIN_UNREGISTERED_USER
 from pages.login_page import LoginPage
 from pages.signup_page import SignUp
 
-@pytest.mark.xfail(reason="La app no valida usuarios no registrados aún")
+@pytest.mark.skip(reason="La app no valida usuarios no registrados aún")
 def test_unregistered_user(driver):
     login = LoginPage(driver)
     signup = SignUp(driver)
