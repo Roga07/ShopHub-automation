@@ -48,19 +48,27 @@ LOGIN_UNREGISTERED_USER = {
     "password": os.getenv("PASSWORD_UNREGISTERED")
 }
 
+# === Diccionario de prueba con campos vacíos ===
 FILL_CHECKOUT_EMPTY = {
-    "first_name": "_",
-    "last_name": "_",
-    "email": "_",
-    "phone": "_",
-    "address": "_",
-    "city": "_",
-    "zip_code": "_",
-    "country": "_"
-
+    "first_name": " ",
+    "last_name": " ",
+    "email": " ",
+    "phone": " ",
+    "address": " ",
+    "city": " ",
+    "zip_code": " ",
+    "country": " "
 }
 
-for key, value in FILL_CHECKOUT_EMPTY.items():
-    if not value:
-        raise ValueError(f"{key} no puede ser None o vacío")
-
+# === Validación general ===
+# Validar solo variables simples, no diccionarios de prueba
+for key, value in globals().items():
+    if key.startswith("__"):
+        continue  # Ignorar internals
+    if key in ["FILL_CHECKOUT_EMPTY"]:
+        continue  # Ignorar diccionarios con valores vacíos a propósito
+    if isinstance(value, dict):
+        # Validar campos de diccionarios normales (como SIGNUP_USER)
+        for subkey, subvalue in value.items():
+            if not subvalue or subvalue.strip() == "":
+                raise ValueError(f"{subkey} no puede ser None o vacío")
