@@ -95,14 +95,8 @@ jobs:
           BASE_URL: ${{ secrets.BASE_URL }}
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
-        steps:
-          - uses: actions/checkout@v4
-          - name: Set up Python
-            uses: actions/setup-python@v5
-            with:
-              python-version: '3.11'
-          - name: Install dependencies
-            run: |
+
+          run: |
               pip install -r requirements.txt
               - name: Run tests
         run: |
