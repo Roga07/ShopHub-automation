@@ -86,6 +86,8 @@ jobs:
           BASE_URL: ${{ secrets.BASE_URL }}
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+          SIGNUP_FIRST_NAME: John
+          SIGNUP_LAST_NAME: Doe
         run: |
           # Crear directorio para reportes
           mkdir -p reports

@@ -31,7 +31,11 @@ CUSTOMER_INFORMATION = {
 }
 
 SIGNUP_INVALID_FORMAT_EMAIL= {
-    "first_name": os.getenv("FIRST_NAME_FAIL"),"last_name": os.getenv("LAST_NAME_FAIL"),"email": os.getenv("EMAIL_FAIL"),"zip_code": os.getenv("ZIP_CODE_FAIL"), "password": os.getenv("PASSWORD_FAIL")
+    "first_name": os.getenv("FIRST_NAME_FAIL"),
+    "last_name": os.getenv("LAST_NAME_FAIL"),
+    "email": os.getenv("EMAIL_FAIL"),
+    "zip_code": os.getenv("ZIP_CODE_FAIL"),
+    "password": os.getenv("PASSWORD_FAIL")
 
 }
 
