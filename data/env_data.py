@@ -18,9 +18,6 @@ SIGNUP_USER = {
     "password": os.getenv("PASSWORD")
 }
 
-for key, value in SIGNUP_USER.items():
-    if not value:
-        raise ValueError(f"{key} no puede ser None o vacío")
 
 CUSTOMER_INFORMATION = {
     "first_name": os.getenv("FIRST_NAME"),
@@ -49,14 +46,15 @@ LOGIN_UNREGISTERED_USER = {
 }
 
 FILL_CHECKOUT_EMPTY = {
-    "first_name": " ",
-    "last_name": " ",
-    "email": " ",
-    "phone": " ",
-    "address": " ",
-    "city": " ",
-    "zip_code": " ",
-    "country": " "
+    "first_name": "_",
+    "last_name": "_",
+    "email": "_",
+    "phone": "_",
+    "address": "_",
+    "city": "_",
+    "zip_code": "_",
+    "country": "_"
 
 }
+
 
