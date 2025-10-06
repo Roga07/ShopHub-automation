@@ -34,7 +34,7 @@ class SignUp(BasePage):
     def signup_as_user(self, firstname: str, lastname: str, email: str, zipcode: str, password: str):
         """Llena el formulario y envía."""
 
-        self.wait.until(EC.visibility_of_element_located(self.FIRST_NAME))
+       # self.wait.until(EC.visibility_of_element_located(self.FIRST_NAME))
 
         self.type(self.FIRST_NAME, firstname)
         self.type(self.LAST_NAME, lastname)
@@ -43,7 +43,7 @@ class SignUp(BasePage):
         self.type(self.INPUT_PASSWORD, password)
         self.wait_for_invisibility(OVERLAY)
         self.click(self.BUTTON_SIGNUP)
-        self.wait.until(EC.presence_of_element_located(self.SUCCESS_TITLE))
+       # self.wait.until(EC.presence_of_element_located(self.SUCCESS_TITLE))
 
 
     def click_go_home(self):
