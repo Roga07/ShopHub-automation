@@ -22,6 +22,15 @@ concurrency:
 jobs:
   test:
     runs-on: ubuntu-latest            # Entorno: última versión de Ubuntu
+    env:
+      FIRST_NAME_FAIL: "John"
+      LAST_NAME_FAIL: "Doe"
+      EMAIL_FAIL: "jhon.doeexample.com"
+      ZIP_CODE_FAIL: "23085"
+      PASSWORD_FAIL: "Password123@."
+      # Puedes agregar aquí también otras variables que usas:
+      # EMAIL_LOGIN: "user@example.com"
+      # PASSWORD_LOGIN: "Secret123"
 
     steps:
       # Paso 1: Obtener el código del repositorio

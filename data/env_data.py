@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 from selenium.webdriver.common.by import By
 
 
-
 load_dotenv() #carga las variables del .env
 
 # Detectar si estamos en CI (GitHub Actions, etc.)
