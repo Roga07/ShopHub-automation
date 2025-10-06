@@ -18,6 +18,9 @@ SIGNUP_USER = {
     "password": os.getenv("PASSWORD")
 }
 
+for key, value in SIGNUP_USER.items():
+    if not value:
+        raise ValueError(f"{key} no puede ser None o vacío")
 
 CUSTOMER_INFORMATION = {
     "first_name": os.getenv("FIRST_NAME"),
@@ -57,4 +60,7 @@ FILL_CHECKOUT_EMPTY = {
 
 }
 
+for key, value in FILL_CHECKOUT_EMPTY.items():
+    if not value:
+        raise ValueError(f"{key} no puede ser None o vacío")
 
