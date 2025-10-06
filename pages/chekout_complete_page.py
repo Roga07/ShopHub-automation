@@ -10,3 +10,4 @@ class CheckoutCompletePage(BasePage):
         self.wait_for_invisibility(OVERLAY)
         assert self.driver.current_url == "https://shophub-commerce.vercel.app/confirmation"
         #print(">>> Current URL:", self.driver.current_url)
+
