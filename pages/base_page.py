@@ -19,9 +19,11 @@ class BasePage:
         """Espera y hace clic en un elemento."""
         self.driver.find_element(*locator).click()
 
-    def type(self, locator: tuple[str, str], text: str):
+    def type(self, locator: tuple[str, str], text: str, timeout = 10):
         """Espera, limpia y escribe en un input."""
-        element = self.driver.find_element(*locator)
+        element = WebDriverWait(self.driver, timeout).until(
+            ec.presence_of_element_located(locator)
+        )
         element.clear()
         element.send_keys(text)
 
