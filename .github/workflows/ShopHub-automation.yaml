@@ -83,10 +83,28 @@ jobs:
       # Paso 9: Ejecutar pruebas con cobertura y reportes
       - name: 🧪 Run tests with Pytest
         env:
+          FIRST_NAME: John
+          LAST_NAME: Doe
+          EMAIL: john.doe@example.com
+          ZIP_CODE: 12345
+          PASSWORD: Password123
+          PHONE: 5551234567
+          ADDRESS: 123 Main Street
+          CITY: Tuxtla
+          COUNTRY: Mexico
           BASE_URL: ${{ secrets.BASE_URL }}
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
-
+        steps:
+          - uses: actions/checkout@v4
+          - name: Set up Python
+            uses: actions/setup-python@v5
+            with:
+              python-version: '3.11'
+          - name: Install dependencies
+            run: |
+              pip install -r requirements.txt
+              - name: Run tests
         run: |
           # Crear directorio para reportes
           mkdir -p reports
