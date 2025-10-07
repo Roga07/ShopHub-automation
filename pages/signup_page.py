@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
 from pages.base_page import BasePage
 from data.env_data import BASE_URL,OVERLAY,SIGNUP_USER
 from selenium.webdriver.support import expected_conditions as EC
@@ -53,7 +54,9 @@ class SignUp(BasePage):
 
     def assert_signup_title(self):
         self.wait_for_invisibility(OVERLAY)
-        assert "Signup Successful" in self.driver.find_element(By.TAG_NAME, "h1").text
+        wait = WebDriverWait(self.driver, 10)
+        element = wait.until(EC.visibility_of_element_located((By.TAG_NAME, "h1")))
+        assert "Signup Successful" in element.text
 
     def assert_signup_campos(self):
         email_input = self.driver.find_element(*self.EMAIL)

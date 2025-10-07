@@ -9,6 +9,7 @@ def step_go_to_home(context):
     context.signup_page.load()
 
 
+
 @when('el usuario navega a la pagina de registro')
 def step_go_to_register(context):
     context.signup_page.sign_up()
