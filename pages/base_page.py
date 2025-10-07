@@ -27,6 +27,7 @@ class BasePage:
         element.clear()
         element.send_keys(text)
 
+
     def text_of_element(self, locator: tuple[str, str]):
         """Devuelve el texto del elemento."""
         return self.driver.find_element(*locator).text
